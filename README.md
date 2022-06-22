@@ -19,7 +19,7 @@ In order for this to work, these are the steps to take:
 11. Setup Wwise using the standard procedures detailed in the Wwise documentation.
 12. Add your AudioClips to Wwise, and hook them up with well-named Events for each voiceline. Don't forget to generate your SoundBank. In Unity, you usually need to enter PlayMode once to load the SoundBank, but refer to Wwise documentation for more information.
 13. Add the PostWwisePlayEventWithAnimation to your GameObject.
-14. Select the desired WwisePlayEvent. Select the Animator you wish to have the AnimationClip played to.
+14. Select the desired WwisePlayEvent. Select the Animator you wish to have the AnimationClip played to. Add the AnimationClip which refers to the same voiceline as the WwisePlayEvent does.
 15. In that Animator, you need to have a State with a default (possibly empty) AnimationClip. The name of that default/empty AnimationClip (so NOT the name of the State!) should be copied to the NameOfClipToSwap field. That State should have a Trigger Parameter, whose name should be in the Trigger field of the PostWwisePlayEventWithAnimation component. The upshot of this system is that you don't need to create a complicated Animator state machine: it simply swaps out the one clip when it's needed.
 16. Then, when you want to start the Animation + Wwise Event, call the SendPlayEvent function (also available through right-mouse-button for easy testing).
 17. Optionally, you can set the Animation Offset, in case there's a mismatch in when the audio is played from Wwise, and the Animation is played in Unity.
