@@ -15,7 +15,7 @@ In order for this to work, these are the steps to take:
 7. If you set the StartOnStart to true, it will start the recording on entering PlayMode, otherwise hit right-mouse-button on the component, and hit StartRecording.
 8. Wait until all clips have been recorded. Have some coffee. It's probably best to leave Unity to run in peace.
 9. Find your recordings. Recorded clips are stored inside the 'Recordings' folder inside the 'Assets' folder.
-10. If satisfied with the recordings, you can remove the RecordSkinnedMeshRendererForDurationOfAudioClips component, and also the SALSA component. If you want, you can keep the Eyes and EmoteR components live.
+10. If satisfied with the recordings, you can remove the RecordSkinnedMeshRendererForDurationOfAudioClips component, and also the SALSA component. If you want, you can keep the Eyes and EmoteR components live. At this stage you can also remove the AudioClips from Unity altogether, as long as you add them to your Wwise project.
 11. Setup Wwise using the standard procedures detailed in the Wwise documentation.
 12. Add your AudioClips to Wwise, and hook them up with well-named Events for each voiceline. Don't forget to generate your SoundBank. In Unity, you usually need to enter PlayMode once to load the SoundBank, but refer to Wwise documentation for more information.
 13. Add the PostWwisePlayEventWithAnimation to your GameObject.
