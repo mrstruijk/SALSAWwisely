@@ -1,4 +1,5 @@
 # SALSAWwisely
+# Version 0.02
 
 Wwise does not (easily) provide Unity with audio data for realtime LipSync approximation.
 In this workaround, you can still keep all audiofiles in Wwise, and trigger recorded Animations simultaneously.
@@ -6,12 +7,13 @@ In this workaround, you can still keep all audiofiles in Wwise, and trigger reco
 You'll need the Unity Recorder (available through the Package Manager). You also need some asset which modifies Blendshapes based on an AudioClip. This is designed for use with SALSA, so that's the best scenario here. Lastly, you'll need Wwise, but I'm sure you can make it work with other middleware such as FMOD.
 
 In order for this to work, these are the steps to take:
+# RECORDING:
 1. Setup your character model using the standard procedures detailed in SALSA's documentation.
-2. Import any voiceline clips you want to use in Unity.
-3. Add the RecordSkinnedMeshRendererForDurationOfAudioClips to the model, at the level where the SkinnedMeshRenderer is located.
-4. Add an AudioSource on that same GameObject.
-5. Add the AudioClips you want to create AnimationClips for to the list AudioClips.
-6. If you want multiple recordings of the same audioclip (since SALSA might analyse the clip slightly differently on each run. Maybe you want to select the best clip once recording is finished): set the 'NumberOfRecordingsPerClip' to the desired number, as long as it's 1 or higher.
+1. Import any voiceline clips you want to use in Unity.
+1. Add the RecordSkinnedMeshRendererForDurationOfAudioClips to the model, at the level where the SkinnedMeshRenderer is located.
+1. Add an AudioSource on that same GameObject.
+1. Add the AudioClips you want to create AnimationClips for to the list AudioClips.
+1. If you want multiple recordings of the same audioclip (since SALSA might analyse the clip slightly differently on each run. Maybe you want to select the best clip once recording is finished): set the 'NumberOfRecordingsPerClip' to the desired number, as long as it's 1 or higher.
 7. If you set the StartOnStart to true, it will start the recording on entering PlayMode, otherwise hit right-mouse-button on the component, and hit StartRecording.
 8. Wait until all clips have been recorded. Have some coffee. It's probably best to leave Unity to run in peace.
 9. Find your recordings. Recorded clips are stored inside the 'Recordings' folder inside the 'Assets' folder.
