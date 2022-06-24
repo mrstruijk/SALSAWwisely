@@ -1,5 +1,5 @@
 # SALSAWwisely
-### Version 0.02
+### Version 0.03
 
 Wwise does not (easily) provide Unity with audio data for realtime LipSync approximation.
 In this workaround, you can still keep all audiofiles in Wwise, and trigger recorded Animations simultaneously.
@@ -20,6 +20,7 @@ In order for this to work, these are the steps to take:
 1. Find your recordings. Recorded clips are stored inside the 'Assets/Animation/Recordings' folder.
 1. Notice that the recorded AnimationClip may not have the exact same length as the AudioClip. This is due to the (exact) framerate of the Unity Editor during PlayMode Recording earlier.
 1. A ScriptableObject with the name of the recording has been created in the 'Assets/Animation/ScriptableObjects' folder. There you can find a reference to the recording, and information on how long it is, compared to the length of the original audioclip. It has a PlayBackSpeedMultiplier for dealing with the difference in AnimationClip vs AudioClip length. It also contains the (suggested) name for you Wwise Event.
+1. If the recorded AnimationClip has bindings you did not intend (e.g. it also animates Materials etc.), you can run the recorded AnimationClip(s) through the RemoveBindings component. Here you can pick any clip to figure out what the names of the bindings are you want to keep. In my case, all bindings I was interested in were labelled with something containing 'blendShape'. RemoveBindings can help you figure out if this is the case for you too, and help you remove incorrect bindings from the clip.
 1. If satisfied with the recordings, you can remove the RecordSkinnedMeshRendererForDurationOfAudioClips component, and also the SALSA component. If you want, you can keep the Eyes and EmoteR components live. At this stage you can also remove the AudioClips from Unity altogether, as long as you add them to your Wwise project.
 
 ## PLAYING:
